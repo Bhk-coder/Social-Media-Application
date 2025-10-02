@@ -2,6 +2,7 @@ package com.bhavik.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ public class User {
     private String gender ;
     private List<Integer> followers = new ArrayList<>();
     private List<Integer> followings = new ArrayList<>();;
+    @ManyToMany
     private List<Post> savedPosts = new ArrayList<>();
 
     public User() {

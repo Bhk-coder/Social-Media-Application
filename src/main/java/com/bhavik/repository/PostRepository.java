@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface PostRepository extends JpaRepository {
-    @Query("select p from Post p where p.userid=:userId")
+public interface PostRepository extends JpaRepository<Post,Integer> {
+    @Query("select p from Post p where p.user.id=:userId")
     public List<Post> findPostByUserId(Integer userid);
 }

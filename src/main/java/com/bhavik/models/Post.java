@@ -1,9 +1,6 @@
 package com.bhavik.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -13,7 +10,7 @@ import java.util.List;
 @Table (name = "Post")
 public class Post {
    @Id
-   @GeneratedValue
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Integer id ;
 
    private String caption;
@@ -22,8 +19,10 @@ public class Post {
 
    private String video;
 
+   @ManyToOne
    private User user;
 
+   @ManyToMany
    private List<User> liked = new ArrayList<>();
 
    private LocalDateTime timeAtCreation;
