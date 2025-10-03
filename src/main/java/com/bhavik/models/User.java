@@ -1,9 +1,6 @@
 package com.bhavik.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +10,24 @@ import java.util.List;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+
     private String firstName;
+
     private String lastName;
+
     private String email;
+
     private String password;
+
     private String gender ;
+
     private List<Integer> followers = new ArrayList<>();
+
     private List<Integer> followings = new ArrayList<>();;
+
+
     @ManyToMany
     private List<Post> savedPosts = new ArrayList<>();
 

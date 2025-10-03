@@ -1,5 +1,6 @@
 package com.bhavik.repository;
 
+import com.bhavik.models.Post;
 import com.bhavik.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -18,6 +19,5 @@ public interface UserRepository extends JpaRepository<User,Integer> {
     List<User> searchUser(@Param("query") String query);
 
 
-
-
+    List<User> findAllBySavedPostsContaining(Post post);
 }
