@@ -28,7 +28,15 @@ Uses @RestController and @RequestMapping annotations.
 Delegates logic to the Service Layer for execution.
 Returns structured JSON responses to clients.
 
+# Tech Stack:
+Spring Boot
+Spring Data JPA
+Hibernate
+MySQL / PostgreSQL (configurable in application.properties)
 
+# Current Status:
+Backend development in progress
+Core CRUD functionality being implemented across all layers
 
 
 
